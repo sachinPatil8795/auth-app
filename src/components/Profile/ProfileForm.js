@@ -18,24 +18,23 @@ const ProfileForm = () => {
           body: JSON.stringify({
             idToken: authCtx.token,
             password: newEnteredPassword,
-            returnSecureToken: false,
+            returnSecureToken: true,
           }),
           headers: {
             "Content-Type": "application/json",
           },
         }
       );
-  
-      if(response.ok){
-        alert('Your password was successfully chnaged!');
-      }else{
+
+      if (response.ok) {
+        alert("Your password was successfully changed!");
+      } else {
         const errData = await response.json();
-        alert(`Failed to change the password, ${errData} `)
+        alert(`Failed to change the password, ${errData} `);
       }
-    }catch(error) {
+    } catch (error) {
       console.log(error);
     }
-   
   };
   return (
     <form className={classes.form} onSubmit={submitHandler}>
