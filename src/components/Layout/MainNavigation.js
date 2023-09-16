@@ -1,20 +1,20 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import classes from './MainNavigation.module.css';
 
 const MainNavigation = () => {
   return (
     <header className={classes.header}>
-      <Link to='/'>
+      <NavLink activeClassName={classes.active} to='/'>
         <div className={classes.logo}>React Auth</div>
-      </Link>
+      </NavLink>
       <nav>
         <ul>
           <li>
-            <Link to='/auth'>Login</Link>
+            <NavLink activeClassName={classes.active} to='/auth'>Login</NavLink>
           </li>
           <li>
-            <Link to='/profile'>Profile</Link>
+            <NavLink activeClassName={classes.active} to='/profile'>Profile</NavLink>
           </li>
           <li>
             <button>Logout</button>
