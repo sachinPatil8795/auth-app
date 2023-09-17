@@ -1,18 +1,18 @@
 import { NavLink } from "react-router-dom";
 import classes from "./MainNavigation.module.css";
-import { useContext} from "react";
+import { useContext } from "react";
 import AuthContext from "../../store/auth-context";
-import {useHistory} from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 const MainNavigation = () => {
   const authCtx = useContext(AuthContext);
-  const history = useHistory()
+  const history = useHistory();
   const isLoggedIn = authCtx.isLoggedIn;
 
   const logoutHandler = () => {
     authCtx.logout(null);
-    history.replace('/auth');
-  }
+    history.replace("/auth");
+  };
 
   return (
     <header className={classes.header}>
